@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 type Variant = "lime" | "ink" | "violet" | "ghost" | "ghost-light";
 
 const BASE =
-  "group inline-flex items-center gap-3 rounded-[var(--radius-pill)] px-6 py-3.5 " +
+  "group inline-flex shrink-0 items-center gap-3 rounded-[var(--radius-pill)] px-6 py-3.5 " +
   "text-[0.82rem] font-semibold uppercase tracking-[0.14em] transition-transform duration-200 " +
   "ease-[var(--ease-out-soft)] hover:-translate-y-0.5 active:translate-y-0";
 

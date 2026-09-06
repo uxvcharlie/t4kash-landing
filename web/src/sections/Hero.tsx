@@ -10,10 +10,10 @@ export function Hero() {
       {/* Franja de patrón: ancla la composición al borde derecho en pantallas grandes */}
       <BlockPattern
         variant="tall"
-        className="pointer-events-none absolute top-0 right-0 hidden h-full w-[9rem] opacity-95 lg:block xl:w-[12rem]"
+        className="pointer-events-none absolute top-0 right-0 hidden h-full w-[8rem] opacity-95 lg:block xl:w-[9.5rem]"
       />
 
-      <div className="relative mx-auto grid max-w-[86rem] items-center gap-14 px-5 pt-28 pb-16 sm:px-7 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:px-10 lg:pt-36 lg:pb-24 lg:pr-[11rem] xl:pr-[14rem]">
+      <div className="relative mx-auto grid max-w-[86rem] items-center gap-14 px-5 pt-28 pb-16 sm:px-7 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:px-10 lg:pt-36 lg:pb-24 lg:pr-[9.5rem] xl:pr-[11rem]">
         <div>
           <Eyebrow tone="light" className="reveal is-in">
             Microtrabajos para estudiantes · Nicaragua
