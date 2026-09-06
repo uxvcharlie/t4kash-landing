@@ -35,7 +35,7 @@ export function ProductShowcase() {
         </div>
 
         {/* Escritorio y tablet: pestañas con un solo teléfono */}
-        <div className="mt-14 hidden gap-12 md:grid md:grid-cols-[1fr_auto] lg:gap-16">
+        <div className="mt-14 hidden gap-12 md:grid md:grid-cols-[1fr_auto] md:items-center lg:gap-16">
           <div>
             <div
               role="tablist"
