@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Sistema visual T4KASH
+   Paleta y tipografia salen del Manual de Identidad Visual (paginas
+   "Paleta de colores" y "Tipografia y jerarquia").
+   ------------------------------------------------------------------ */
+@theme {
+  --color-ink: #191919;
+  --color-ink-2: #202020;
+  --color-lime: #c1ff72;
+  --color-violet: #5749fd;
+  --color-blue: #0a74ff;
+  --color-pink: #ff1d7c;
+  --color-paper: #f6f6f4;
+
+  --font-display: "Cosmic Octo", "Rubik", "Arial Black", system-ui, sans-serif;
+  --font-body: "Codec Pro", "Outfit", "Futura", system-ui, -apple-system, sans-serif;
+
+  --radius-panel: 28px;
+  --radius-pill: 999px;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/*  Las dos familias de marca son comerciales (Cosmic Octo - Hanken Design Co.,
+    Codec Pro - Zetafonts) y no se pueden redistribuir como webfont sin licencia.
+    En cuanto existan los .woff2 con licencia web basta con descomentar esto:
+    el resto de la hoja ya las pide primero en cada stack.
+
+@font-face { font-family: "Cosmic Octo"; src: url("/fonts/cosmic-octo.woff2") format("woff2");
+             font-weight: 500 900; font-display: swap; }
+@font-face { font-family: "Codec Pro"; src: url("/fonts/codec-pro.woff2") format("woff2");
+             font-weight: 300 700; font-display: swap; }
+*/
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --grid-line: rgba(25, 25, 25, 0.07);
+  }
+
+  * {
+    min-width: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-synthesis-weight: none;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 0.92;
+    text-transform: uppercase;
+    text-wrap: balance;
+  }
+
+  p { text-wrap: pretty; }
+
+  :focus-visible {
+    outline: 3px solid var(--color-blue);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: var(--color-lime);
+    color: var(--color-ink);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Textura de cuadricula del manual */
+  .grid-paper {
+    background-image:
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 56px 56px;
+    background-position: center;
+  }
+
+  .grid-paper-dark {
+    --grid-line: rgba(255, 255, 255, 0.07);
+  }
+
+  /* Esquina achaflanada: el gesto estructural del manual */
+  .chamfer {
+    --cut: 40px;
+    clip-path: polygon(
+      0 0,
+      calc(100% - var(--cut)) 0,
+      100% var(--cut),
+      100% 100%,
+      var(--cut) 100%,
+      0 calc(100% - var(--cut))
+    );
+  }
+
+  .chamfer-tr {
+    --cut: 56px;
+    clip-path: polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% 100%, 0 100%);
+  }
+
+  /* Scroll-reveal: el estado inicial solo se aplica si hay JS y movimiento */
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition:
+      opacity 0.7s var(--ease-out-soft),
+      transform 0.7s var(--ease-out-soft);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  .reveal.is-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; }
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes t4-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
