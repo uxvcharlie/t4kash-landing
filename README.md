@@ -1,6 +1,6 @@
 # Landing de T4KASH
 
-Página pública de T4KASH: <https://uxvcharlie.github.io/t4kash-landing/>
+Página pública de T4KASH: <https://charlieuxv.github.io/t4kash-landing/>
 
 Construida con **React + TypeScript + Tailwind CSS** sobre Vite. El código fuente
 vive en `web/` y el resultado del build se publica en la raíz del repositorio,
@@ -17,6 +17,16 @@ web/
     assets/       Capturas de la app y logotipo, en WebP
   public/media/   Video demo, imagen Open Graph, iconos
 ```
+
+## Si la URL cambia
+
+La dirección del sitio está escrita a mano en cuatro lugares. Si el repositorio
+se mueve de cuenta o se le pone un dominio propio, hay que tocar los cuatro:
+
+- `web/index.html` — `canonical`, `og:url`, `og:image`, `twitter:image` y el JSON-LD
+- `web/public/sitemap.xml`
+- `web/public/robots.txt`
+- este README
 
 ## Trabajar en local
 
