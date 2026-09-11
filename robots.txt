@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://charlieuxv.github.io/t4kash-landing/sitemap.xml
+Sitemap: https://uxvcharlie.github.io/t4kash-landing/sitemap.xml

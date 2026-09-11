@@ -1,6 +1,6 @@
 # Landing de T4KASH
 
-Página pública de T4KASH: <https://charlieuxv.github.io/t4kash-landing/>
+Página pública de T4KASH: <https://uxvcharlie.github.io/t4kash-landing/>
 
 Construida con **React + TypeScript + Tailwind CSS** sobre Vite. El código fuente
 vive en `web/` y el resultado del build se publica en la raíz del repositorio,
