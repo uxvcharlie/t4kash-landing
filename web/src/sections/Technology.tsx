@@ -1,7 +1,5 @@
 import { STACK, SERVICES } from "../data/content";
-import { SITE } from "../data/site";
 import { Eyebrow } from "../components/Ui";
-import { Button } from "../components/Button";
 import { Reveal } from "../components/Reveal";
 
 const ARCHITECTURE = [
@@ -97,11 +95,6 @@ export function Technology() {
           </div>
         </div>
 
-        <div className="mt-10">
-          <Button href={SITE.repo} variant="ghost" external>
-            Ver proyecto en GitHub
-          </Button>
-        </div>
       </div>
     </section>
   );

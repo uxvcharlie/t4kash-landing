@@ -1,4 +1,3 @@
-import { SITE } from "../data/site";
 import { Button } from "../components/Button";
 import { Eyebrow } from "../components/Ui";
 import { BlockPattern, MazePattern } from "../components/Pattern";
@@ -36,9 +35,6 @@ export function CTA() {
               <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <Button href="#producto" variant="lime">
                   Explorar oportunidades
-                </Button>
-                <Button href={SITE.repo} variant="ghost-light" external>
-                  Ver el proyecto
                 </Button>
               </div>
 

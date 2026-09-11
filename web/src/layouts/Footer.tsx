@@ -53,16 +53,6 @@ export function Footer() {
             <h2 className="font-display text-[0.72rem] tracking-[0.16em] text-white/55">Proyecto</h2>
             <ul className="mt-4 space-y-2.5">
               <li>
-                <a
-                  href={SITE.repo}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="text-white/75 transition-colors hover:text-lime"
-                >
-                  GitHub
-                </a>
-              </li>
-              <li>
                 <a href={SITE.contact} className="text-white/75 transition-colors hover:text-lime">
                   Contacto
                 </a>
